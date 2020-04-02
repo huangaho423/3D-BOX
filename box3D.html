@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>box3D</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 3rem;
+            line-height: 200px;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            width: 200px;
+            margin: 200px auto;
+            background: #eee;
+            perspective: 800px;
+        }
+
+        .box {
+            position: relative;
+            transform: rotateX(-30deg) rotateY(40deg);
+            transform-style: preserve-3d;
+            transition: .4s;
+        }
+
+        .box:hover {
+            transform: rotateX(-10deg) rotateY(30deg);
+        }
+
+        .box-side {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: lightblue;
+            opacity: .7;
+            text-align: center;
+            border: 1px solid #aaa;
+            transition: .4s;
+        }
+
+        .box .top {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .box .bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        .box .front {
+            transform: rotateX(0deg) translateZ(100px);
+        }
+
+        .box .back {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .box .left {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .box:hover .left {
+            transform: rotateY(90deg) translateZ(150px);
+        }
+
+        .box .right {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        .box:hover .right {
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <div class="box-side top">top</div>
+            <div class="box-side bottom">bottom</div>
+            <div class="box-side front">front</div>
+            <div class="box-side back">back</div>
+            <div class="box-side left">left</div>
+            <div class="box-side right">right</div>
+        </div>
+    </div>
+</body>
+
+</html>
